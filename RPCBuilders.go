@@ -8,327 +8,231 @@ type RPCPayload struct {
   ID       int                     `json:"id"`
 }
 
-func buildRPC(
-  method       string,
-  id           int,
-  rpcPassword  string,
-  params       RPCPayload
-)
-RPCPayload {
+func buildRPC(method string, id int, rpcPassword  string, params *map[string]interface{}) RPCPayload {
   return RPCPayload{
     JSONRPC   : "2.0",
     Method    : method,
-    Password  : password,
+    Password  : rpcPassword,
     ID        : id,
-    params    : params
-  }
+    Params    : params}
 }
 
-func reset(
-  id          int,
-  rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+func reset(id int, rpcPassword string, params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "reset",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
-func save(
-  id          int,
-  rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+func save(id int, rpcPassword string, params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "save",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
-func save(
-  id          int,
-  rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
-  return buildRPC(
-    "save",
-    id,
-    rpcPassword,
-    params
-  )
-}
-
-func getViewKey(
-  id          int,
-  rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+func getViewKey(id int, rpcPassword string, params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getViewKey",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
-func getSpendKeys(
-  id          int,
-  rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+func getSpendKeys(id int, rpcPassword string, params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getSpendKeys",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func getStatus(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getStatus",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func getAddresses(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getAddresses",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func createAddress(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "createAddress",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func deleteAddress(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "deleteAddress",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func getBalance(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getBalance",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 
 func getBlockHashes(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getBlockHashes",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func getTransactionHashes(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getTransactionHashes",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func getTransactions(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getTransactionHashes",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func getUnconfirmedTransactionHashes(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getUnconfirmedTransactionHashes",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func getTransaction(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getTransaction",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func sendTransaction(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "sendTransaction",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func createDelayedTransaction(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "createDelayedTransaction",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func getDelayedTransactionHashes(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "getDelayedTransactionHashes",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func deleteDelayedTransaction(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "deleteDelayedTransaction",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func sendDelayedTransaction(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "sendDelayedTransaction",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func sendFusionTransaction(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "sendFusionTransaction",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
 
 func estimateFusion(
   id          int,
   rpcPassword string,
-  params      RPCPayload
-)
-RPCPayload {
+  params *map[string]interface{}) RPCPayload {
   return buildRPC(
     "estimateFusion",
     id,
     rpcPassword,
-    params
-  )
+    params)
 }
