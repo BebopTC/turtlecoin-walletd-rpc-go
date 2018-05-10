@@ -236,3 +236,11 @@ func estimateFusion(
     rpcPassword,
     params)
 }
+
+func getMnemonicSeed(id int, rpcPassword string, params *map[string]interface{}) RPCPayload {
+  return buildRPC(
+    "getMnemonicSeed",
+    id,
+    rpcPassword,
+    params)
+}
